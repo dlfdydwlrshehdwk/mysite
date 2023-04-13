@@ -108,6 +108,8 @@ $(() => {
                             // 다만 현재문서와의 동기처리를 하려면
                             // 비동기옵션값을 false로 해야한다.
                             // pass전역변수를 사용하기위해 필요
+                            // 최종 트리거 blur발생시 순서대로 
+                            // 처리할때 동기화해야하기 때문
                             async:false,
                             // 6. 성공처리
                             success:function(res){ // res - 결과값리턴
@@ -116,7 +118,7 @@ $(() => {
                                     $('#mid').siblings(".msg").text("멋진 아이디네요!").addClass("on")
                                 } // ok ////
                                 else{ // 아이디 중복시
-                                    $(this).siblings(".msg").text("사용중인 아이디입니다").removeClass("on")
+                                    $('#mid').siblings(".msg").text("사용중인 아이디입니다").removeClass("on")
                                     // 불통과처리 -> pass변수 사용이유로
                                     // async : false 옵션 사용함
                                     pass = false;
