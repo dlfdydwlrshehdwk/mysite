@@ -89,6 +89,10 @@ session_start();
                     </a>
                     `
                     );
+
+                    // 관리자 페이지 링크설정
+                    $('.sns').last()
+                    .click(()=>location.href='./admin/')
         } /////////// if /////////////////
 
 
@@ -112,7 +116,8 @@ session_start();
           fontSize: "14px",
           fontWeight: "bold",
           textAlign: "center",
-          whiteSpace: "nowrap"
+          whiteSpace: "nowrap",
+          zIndex: -1.
       }); ////// css //////////
 
 
